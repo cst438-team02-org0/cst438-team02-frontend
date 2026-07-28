@@ -114,7 +114,7 @@ const AssignmentsView = () => {
               <td>{a.dueDate}</td>
               {/* Invoke the Assignment Grade and Update to render appropriate menus
               Added a prop to accept a clear message for the parent component*/}
-              <td><AssignmentGrade assignment={a.id}/></td>
+              <td><AssignmentGrade assignment={a}/></td>
               <td><AssignmentUpdate editAssignment={a} onClose={fetchAssignments} clearMessage={clearMessage} /></td>
               <td><button onClick={() => onDelete(a.id)}>Delete</button></td>
             </tr>
