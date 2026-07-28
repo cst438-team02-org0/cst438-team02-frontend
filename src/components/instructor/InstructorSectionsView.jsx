@@ -24,6 +24,7 @@ const InstructorSectionsView = () => {
       );
       if (response.ok) {
         const data = await response.json();
+        setMessage('');
         setSections(data);
       } else {
         const rc = await response.json();
