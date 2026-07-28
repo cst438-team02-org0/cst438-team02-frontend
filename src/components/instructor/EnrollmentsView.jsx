@@ -38,7 +38,7 @@ const EnrollmentsView = () => {
     fetchEnrollments()
   }, []);
 
-  const grades = ['', 'A', 'B', 'C', 'D', 'F'];
+  const grades = ['', 'A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F'];
 
   const onGradeChange = (enrollmentId, newGrade) => {
     setEnrollments(prev => prev.map(e =>
