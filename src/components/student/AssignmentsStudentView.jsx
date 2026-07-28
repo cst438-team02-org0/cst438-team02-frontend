@@ -51,7 +51,7 @@ const AssignmentsStudentView = () => {
         <tbody>
           {assignments.map((a) => (
             <tr key={a.assignmentId}>
-              <td>{a.courseId}</td>
+              <td>{a.courseId}-{a.sectionId}</td>
               <td>{a.title}</td>
               <td>{a.dueDate}</td>
               <td>{a.score !== null ? a.score : ''}</td>
