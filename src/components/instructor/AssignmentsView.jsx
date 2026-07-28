@@ -96,10 +96,9 @@ const AssignmentsView = () => {
     <div>
       <h3> {courseId}-{secId} Assignments</h3>
       <Messages response={message} />
-
       {/* If there are no assignments display a message, otherwise display rows of
       the assignment */}
-      {assignments.length === 0  ? (<p>No assignments found for this section.</p>) : (
+      {assignments.length === 0  ? (<p>There are currently no assignments for this section.</p>) : (
       <table className="Center" >
         <thead>
           <tr>
@@ -114,7 +113,7 @@ const AssignmentsView = () => {
               <td>{a.dueDate}</td>
               {/* Invoke the Assignment Grade and Update to render appropriate menus
               Added a prop to accept a clear message for the parent component*/}
-              <td><AssignmentGrade assignment={a}/></td>
+              <td><AssignmentGrade assignment={a} clearMessage={clearMessage} /></td>
               <td><AssignmentUpdate editAssignment={a} onClose={fetchAssignments} clearMessage={clearMessage} /></td>
               <td><button onClick={() => onDelete(a.id)}>Delete</button></td>
             </tr>
