@@ -41,10 +41,29 @@ const Transcript = () => {
   return (
     <>
       <h3>Transcript</h3>
-      <p>To be implemented.  Display a table showing the course a student has taken.
-        The table columns are given in headers.
-      </p>
-
+      <Messages response={message} />
+      <table className="Center">
+        <thead>
+          <tr>
+            {headers.map((h, idx) => (
+              <th key={idx}>{h}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {courses.map((c) => (
+            <tr key={c.enrollmentId}>
+              <td>{c.year}</td>
+              <td>{c.semester}</td>
+              <td>{c.courseId}</td>
+              <td>{c.sectionId}</td>
+              <td>{c.title}</td>
+              <td>{c.credits}</td>
+              <td>{c.grade}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }
