@@ -13,11 +13,19 @@ function SelectTerm({ onClick, buttonText }) {
         setTerm({ ...term, [e.target.name]: e.target.value });
     }
 
+    const onButtonClick = () => {
+        const normalized = {
+            ...term,
+            semester: term.semester.charAt(0).toUpperCase() + term.semester.slice(1).toLowerCase()
+        };
+        onClick(normalized);
+    }
+    
     return (
         <>
             <input id="year" type="text" name="year" value={term.year} placeholder="year" onChange={onChange} />
             <input id="semester" type="text" name="semester" value={term.semester} placeholder="semester" onChange={onChange} />
-            <button id="selectTermButton" onClick={() => { onClick(term) }}>{buttonText}</button>
+            <button id="selectTermButton" onClick={onButtonClick}>{buttonText}</button>
         </>
     )
 
